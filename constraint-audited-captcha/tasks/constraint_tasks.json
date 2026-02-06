@@ -1,0 +1,125 @@
+[
+  {
+    "id": "C1",
+    "type": "constraint",
+    "prompt": "Return JSON with keys `a` and `b` only. `a` must be 2, `b` must be 5. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_exact",
+      "required_keys": [
+        "a",
+        "b"
+      ],
+      "no_extra_keys": true,
+      "equals": {
+        "a": 2,
+        "b": 5
+      }
+    }
+  },
+  {
+    "id": "C2",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"words\": [...]}. The list must contain exactly 3 words, each exactly 4 letters long. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_words_list",
+      "key": "words",
+      "list_len": 3,
+      "word_len": 4
+    }
+  },
+  {
+    "id": "C3",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"msg\": \"...\"}. The msg must NOT contain the letter `e` (case-insensitive). Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_string_forbidden_chars",
+      "key": "msg",
+      "forbidden_chars": [
+        "e",
+        "E"
+      ]
+    }
+  },
+  {
+    "id": "C4",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"text\": \"...\", \"count\": N}. The count must equal the number of characters in text (count every character, including spaces). Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_crossfield_charcount",
+      "text_key": "text",
+      "count_key": "count"
+    }
+  },
+  {
+    "id": "C5",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"items\": [...]}. items must equal [\"alpha\",\"beta\",\"gamma\"] in that exact order. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_list_exact",
+      "key": "items",
+      "exact": [
+        "alpha",
+        "beta",
+        "gamma"
+      ]
+    }
+  },
+  {
+    "id": "C6",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"x\": \"...\", \"y\": N}. x must be exactly 6 letters (a-z only). y must equal the number of vowels in x. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_vowel_count",
+      "x_key": "x",
+      "y_key": "y",
+      "len": 6,
+      "regex": "^[A-Za-z]{6}$"
+    }
+  },
+  {
+    "id": "C7",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"color\": \"...\"}. color must be exactly one of: red, green, blue. No other tokens allowed. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_enum",
+      "key": "color",
+      "allowed": [
+        "red",
+        "green",
+        "blue"
+      ]
+    }
+  },
+  {
+    "id": "C8",
+    "type": "constraint",
+    "prompt": "Return a single-line JSON object with no spaces anywhere. It must be exactly {\"ok\":true}. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "raw_exact_no_spaces",
+      "exact": "{\"ok\":true}"
+    }
+  },
+  {
+    "id": "C9",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"id\": \"NNN\", \"sum\": S}. id must be exactly 3 digits. sum must equal the sum of those digits. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_digit_sum",
+      "id_key": "id",
+      "sum_key": "sum",
+      "digits": 3
+    }
+  },
+  {
+    "id": "C10",
+    "type": "constraint",
+    "prompt": "Return JSON of the form {\"letters\": \"....\", \"unique\": true/false}. letters must be exactly 4 characters (A-Z only). unique must be true iff all letters are different. Output ONLY the JSON object.",
+    "validator": {
+      "kind": "json_unique_letters",
+      "letters_key": "letters",
+      "unique_key": "unique",
+      "len": 4,
+      "regex": "^[A-Z]{4}$"
+    }
+  }
+]

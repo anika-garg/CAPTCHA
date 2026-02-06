@@ -1,0 +1,4 @@
+task_id,task_type,attempt,passed,error,detail
+B1,baseline,1,True,PASS,
+C1,constraint,1,False,INVALID_JSON,Example only; not from a real model run.
+C1,constraint,2,True,PASS,Example only; not from a real model run.

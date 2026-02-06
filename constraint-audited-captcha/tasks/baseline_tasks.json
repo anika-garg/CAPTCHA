@@ -1,0 +1,62 @@
+[
+  {
+    "id": "B1",
+    "type": "baseline",
+    "prompt": "Reply with only the second word of this sentence: `cats chase tiny mice`",
+    "answer": "chase"
+  },
+  {
+    "id": "B2",
+    "type": "baseline",
+    "prompt": "Output the number of letters in `paper` as a single digit.",
+    "answer": "5"
+  },
+  {
+    "id": "B3",
+    "type": "baseline",
+    "prompt": "Write `OK` exactly, nothing else.",
+    "answer": "OK"
+  },
+  {
+    "id": "B4",
+    "type": "baseline",
+    "prompt": "Return the third character of `ABCDEFG`.",
+    "answer": "C"
+  },
+  {
+    "id": "B5",
+    "type": "baseline",
+    "prompt": "Output the sum: 7 + 5.",
+    "answer": "12"
+  },
+  {
+    "id": "B6",
+    "type": "baseline",
+    "prompt": "Return the word `blue` in all caps.",
+    "answer": "BLUE"
+  },
+  {
+    "id": "B7",
+    "type": "baseline",
+    "prompt": "Return the last word of: `one two three four`.",
+    "answer": "four"
+  },
+  {
+    "id": "B8",
+    "type": "baseline",
+    "prompt": "Output the string `a-b-c` exactly.",
+    "answer": "a-b-c"
+  },
+  {
+    "id": "B9",
+    "type": "baseline",
+    "prompt": "Reply with `yes` if 9 is odd, else `no`.",
+    "answer": "yes"
+  },
+  {
+    "id": "B10",
+    "type": "baseline",
+    "prompt": "Return the 1st, then the 3rd word: `red green yellow` separated by a comma.",
+    "answer": "red,yellow"
+  }
+]
